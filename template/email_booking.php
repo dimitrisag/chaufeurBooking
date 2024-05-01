@@ -322,7 +322,7 @@
 								<?php
 									if (array_key_exists('form_element_field', $this->data['booking']['meta']))
 									{ 
-										foreach ($this->data['booking']['meta'] as $label => $value)
+										foreach ($this->data['booking']['meta']['form_element_field'] as $label => $value)
 										{
 								?>
 									<tr>
