@@ -551,8 +551,7 @@ class CHBSBookingFormElement
 
 			/************************************************************** */
 
-			if ($data['pickup_location'] != $locationDictionary['location_fixed_pickup']) continue;
-
+			
 			$pickupLocation = $data['pickup_location_coordinate_service_type_' . $data['service_type_id']];
 			if ($GeofenceChecker->locationInGeofence($value['geofence_pickup'], $geofenceDictionary, $pickupLocation) === false) continue;
 
