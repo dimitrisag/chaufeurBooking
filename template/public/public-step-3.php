@@ -36,4 +36,4 @@ global $post;
 				<span class="chbs-meta-icon-arrow-horizontal-large"></span>
 			</a> 
 		</div>
-		<div><?php echo esc_html($data); ?></div>
+		<div><?php echo esc_html(json_encode($data)); ?></div>
