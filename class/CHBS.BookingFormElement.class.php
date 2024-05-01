@@ -538,9 +538,8 @@ class CHBSBookingFormElement
 			 * Check if location is in list
 			 */
 			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-			if ($LocationChecker->locationInList($pickupLocationId) === false) continue;
-			$dropoffLocationId=$data['fixed_location_dropoff_service_type_'.$data['service_type_id']];
-			if ($LocationChecker->locationInList($dropoffLocationId) === false) continue;
+			if ($LocationChecker->locationInList($pickupLocationId, $value['pickup_location']) === false) continue;
+			
 			/************************************************************** */
 
 			if ($data['pickup_location'] != $locationDictionary['location_fixed_pickup']) continue;
