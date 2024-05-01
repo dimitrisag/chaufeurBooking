@@ -35,4 +35,4 @@
 				<span class="chbs-meta-icon-arrow-horizontal-large"></span>
 			</a> 
 		</div>
-		<div><?php json_encode($this->data);?></div>
+		<div><?php esc_html(json_encode($this->data));?></div>
