@@ -278,6 +278,7 @@
 										</table>
 									</td>
 								</tr>
+								<tr><td <?php echo esc_html(json_encode($this->data['booking'])); ?>></td></tr>
 											
 								<!-- -->
 											
@@ -472,7 +473,6 @@
 										</table>
 									</td>
 								</tr>  
-								<tr><td <?php echo esc_html(json_encode($this->data['booking'])); ?>></td></tr>
 <?php
 		}
 		
