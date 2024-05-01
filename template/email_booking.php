@@ -319,7 +319,7 @@
 								
 								<!-- -->
 								
-<?php
+<!-- <?php
 		if(array_key_exists('driver_full_name',$this->data['booking']))
 		{
 ?>
@@ -340,7 +340,7 @@
 								</tr>	
 <?php
 		}
-?>
+?> -->
 								
 								<!-- -->
 											
