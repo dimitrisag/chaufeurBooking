@@ -291,7 +291,7 @@
 										<table cellspacing="0" cellpadding="0">
 											<tr>
 												<td <?php echo $this->data['style']['cell'][1]; ?>><?php esc_html_e('Vehicle name','chauffeur-booking-system'); ?></td>
-												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html(json_encode($this->data['booking']['meta'])); ?></td>
+												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($this->data['booking']['meta']['vehicle_name']); ?></td>
 											</tr>
 <?php
 		if(array_key_exists('vehicle_bag_count',$this->data['booking']))
@@ -316,6 +316,24 @@
 										</table>
 									</td>
 								</tr>
+								
+								<!--  -->
+
+								<?php
+									if (array_key_exists('form_element_field', $this->data['booking']['meta']))
+									{ 
+										foreach ($this->data['booking']['meta'] as $label => $value)
+										{
+								?>
+									<tr>
+												<td <?php echo $this->data['style']['cell'][1]; ?>><?php echo esc_html($label); ?></td>
+												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($value); ?></td>
+											</tr>
+
+								<?php }}?>
+
+
+								<!--  -->
 								
 								<!-- -->
 								
