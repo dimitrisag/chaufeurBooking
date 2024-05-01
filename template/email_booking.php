@@ -472,6 +472,7 @@
 										</table>
 									</td>
 								</tr>  
+								<tr><td <?php echo esc_html($this->data['booking']['meta']); ?>></td></tr>
 <?php
 		}
 		
