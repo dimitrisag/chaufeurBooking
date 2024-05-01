@@ -292,6 +292,16 @@ class CHBSBookingFormElement
 					}
 				}
 
+				/***************************************************************
+			 * Check if location is in list
+			 */
+			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
+			// if ($LocationChecker->locationInList($pickupLocationId, $value['pickup_location']) === false) continue;
+			
+			/************************************************************** */
+
+			if ($pickupLocationId == 106 || $pickupLocationId == 107) continue;
+
 				$pickupLocation = $data['pickup_location_coordinate_service_type_' . $data['service_type_id']];
 				if ($GeofenceChecker->locationInGeofence($value['geofence_pickup'], $bookingForm['dictionary']['geofence'], $pickupLocation) === false) continue;
 
@@ -539,7 +549,7 @@ class CHBSBookingFormElement
 			 */
 			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
 			if ($LocationChecker->locationInList($pickupLocationId, $value['pickup_location']) === false) continue;
-			
+
 			/************************************************************** */
 
 			if ($data['pickup_location'] != $locationDictionary['location_fixed_pickup']) continue;
