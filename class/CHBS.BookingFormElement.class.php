@@ -267,6 +267,7 @@ class CHBSBookingFormElement
 
 		$Validation = new CHBSValidation();
 		$GeofenceChecker = new CHBSGeofenceChecker();
+		$LocationChecker = new LocationChecker();
 
 		$data = CHBSHelper::getPostOption();
 
@@ -293,14 +294,12 @@ class CHBSBookingFormElement
 				}
 
 				/***************************************************************
-			 * Check if location is in list
-			 */
-			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-			// if ($LocationChecker->locationInList($pickupLocationId, $value['pickup_location']) === false) continue;
-			
-			/************************************************************** */
+				 * Check if location is in list
+				 */
+				$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
+				if ($LocationChecker->isRestricted($pickupLocationId)) continue;
 
-			if ($pickupLocationId == 106 || $pickupLocationId == 107) continue;
+				/************************************************************** */
 
 				$pickupLocation = $data['pickup_location_coordinate_service_type_' . $data['service_type_id']];
 				if ($GeofenceChecker->locationInGeofence($value['geofence_pickup'], $bookingForm['dictionary']['geofence'], $pickupLocation) === false) continue;
@@ -543,7 +542,7 @@ class CHBSBookingFormElement
 				}
 			}
 
-			
+
 			/***************************************************************
 			 * Check if location is in list
 			 */
@@ -553,7 +552,7 @@ class CHBSBookingFormElement
 			/************************************************************** */
 
 			if ($data['pickup_location'] != $locationDictionary['location_fixed_pickup']) continue;
-		
+
 			$pickupLocation = $data['pickup_location_coordinate_service_type_' . $data['service_type_id']];
 			if ($GeofenceChecker->locationInGeofence($value['geofence_pickup'], $geofenceDictionary, $pickupLocation) === false) continue;
 

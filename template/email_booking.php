@@ -59,7 +59,7 @@
 								<tr>
 									<td>
 										Please Note: For any help / clarification you will need about your transfer don't hesitate to contact us at (+30)6934034713 <br>
-										Contact name: Triantafillos Avgerinos
+										Contact person: Triantafillos Avgerinos
 									</td>
 								</tr>
 								<tr><td <?php echo $this->data['style']['separator'][3]; ?>></td></tr>
