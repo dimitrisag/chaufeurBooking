@@ -1,9 +1,8 @@
 <?php
-global $post;
 		$Payment=new CHBSPayment();
 		$Validation=new CHBSValidation();
 		$BookingFormElement=new CHBSBookingFormElement();
-		$data=CHBSHelper::getPostOption($post);
+		$data=CHBSHelper::getPostOption();
 		// $Location = new CHBSLocation();
 		// 		$locationDictionary=$Location->getDictionary();
 
@@ -36,4 +35,3 @@ global $post;
 				<span class="chbs-meta-icon-arrow-horizontal-large"></span>
 			</a> 
 		</div>
-		<div><?php echo var_dump(json_encode($data)); ?></div>
