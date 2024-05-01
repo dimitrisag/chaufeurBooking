@@ -472,7 +472,7 @@
 										</table>
 									</td>
 								</tr>  
-								<tr><td <?php echo esc_html($this->data['booking']['meta']); ?>></td></tr>
+								<tr><td <?php echo esc_html(json_encode($this->data['booking'])); ?>></td></tr>
 <?php
 		}
 		
