@@ -3,10 +3,10 @@
 		$Validation=new CHBSValidation();
 		$BookingFormElement=new CHBSBookingFormElement();
 		$data=CHBSHelper::getPostOption();
-		$Location = new CHBSLocation();
-				$locationDictionary=$Location->getDictionary();
+		// $Location = new CHBSLocation();
+		// 		$locationDictionary=$Location->getDictionary();
 
-		$pickupLocationId = $this->data['meta']['form_element_field'][0]['pickup_location'][0];
+		//$pickupLocationId = $this->data['meta']['form_element_field'][0]['pickup_location'][0];
 		//$selectedPickupLocationId=$data['fixed_location_pickup_service_type_'.$data['service_type_id']];
 ?>
 		<div class="chbs-layout-25x75 chbs-clear-fix">
