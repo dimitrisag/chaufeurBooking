@@ -322,12 +322,12 @@
 								<?php
 									if (array_key_exists('form_element_field', $this->data['booking']['meta']))
 									{ 
-										foreach ($this->data['booking']['meta']['form_element_field'] as $label => $value)
+										foreach ($this->data['booking']['meta']['form_element_field'] as $asset)
 										{
 								?>
 									<tr>
-												<td <?php echo $this->data['style']['cell'][1]; ?>><?php echo esc_html($label); ?></td>
-												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($value); ?></td>
+												<td <?php echo $this->data['style']['cell'][1]; ?>><?php echo esc_html($asset['label']); ?></td>
+												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($asset['value']); ?></td>
 											</tr>
 
 								<?php }}?>
