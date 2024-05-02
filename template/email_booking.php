@@ -317,23 +317,6 @@
 									</td>
 								</tr>
 								
-								<!--  -->
-
-								<?php
-									if (array_key_exists('form_element_field', $this->data['booking']['meta']))
-									{ 
-										foreach ($this->data['booking']['meta']['form_element_field'] as $asset)
-										{
-								?>
-									<tr>
-												<td <?php echo $this->data['style']['cell'][1]; ?>><?php echo esc_html($asset['label']); ?></td>
-												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($asset['value']); ?></td>
-											</tr>
-
-								<?php }}?>
-
-
-								<!--  -->
 								
 								<!-- -->
 								
@@ -431,6 +414,23 @@
 												<td <?php echo $this->data['style']['cell'][1]; ?>><?php esc_html_e('Phone number','chauffeur-booking-system'); ?></td>
 												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($this->data['booking']['meta']['client_contact_detail_phone_number']); ?></td>
 											</tr>
+											<!--  -->
+
+								<?php
+									if (array_key_exists('form_element_field', $this->data['booking']['meta']))
+									{ 
+										foreach ($this->data['booking']['meta']['form_element_field'] as $asset)
+										{
+								?>
+									<tr>
+												<td <?php echo $this->data['style']['cell'][1]; ?>><?php echo esc_html($asset['label']); ?></td>
+												<td <?php echo $this->data['style']['cell'][2]; ?>><?php echo esc_html($asset['value']); ?></td>
+											</tr>
+
+								<?php }}?>
+
+
+								<!--  -->
 <?php
 		echo $BookingFormElement->displayField(1,$this->data['booking']['meta'],2,array('style'=>$this->data['style']),'<br/>',false);
 ?>
