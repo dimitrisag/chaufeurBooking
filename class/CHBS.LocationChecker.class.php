@@ -10,7 +10,8 @@ class LocationChecker {
     }
 
     public function isRestricted($locationId) {
-        if ($locationId == 107 || $locationId == 106) return true;
+        // Ids for locations to restrict (Ports and Airports)
+        if ($locationId == 107 || $locationId == 106 || $locationId == 345) return true;
         return false;
     }
 }
