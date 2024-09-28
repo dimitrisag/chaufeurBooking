@@ -436,7 +436,7 @@ class CHBSHelper
 	{
 		$Validation=new CHBSValidation();
 				
-		if((is_array($bookingMeta)) && (array_key_exists('address',$bookingMeta)) && ($Validation->isNotEmpty($bookingMeta['address']))) return($bookingMeta['address']);
+		if((is_array($bookingMeta)) && (array_key_exists('address',$bookingMeta)) && ($Validation->isNotEmpty($bookingMeta['address']))) return($bookingMeta['name']);
 				
 		return($bookingMeta['formatted_address']);
 	}

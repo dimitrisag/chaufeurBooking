@@ -4098,7 +4098,7 @@ class CHBSBookingForm
 			if(count($bookingForm['meta']['location_fixed_pickup_service_type_'.$data['service_type_id']]))
 			{
 				$pickupLocationId=$data['fixed_location_pickup_service_type_'.$data['service_type_id']];
-				$pickupLocationHtml=$bookingForm['meta']['location_fixed_pickup_service_type_'.$data['service_type_id']][$pickupLocationId]['address'];				
+				$pickupLocationHtml=$bookingForm['meta']['location_fixed_pickup_service_type_'.$data['service_type_id']][$pickupLocationId]['name'];				
 			}
 			else
 			{
@@ -4124,7 +4124,7 @@ class CHBSBookingForm
 			if(count($bookingForm['meta']['location_fixed_dropoff_service_type_'.$data['service_type_id']]))
 			{
 				$dropoffLocationId=$data['fixed_location_dropoff_service_type_'.$data['service_type_id']];
-				$dropoffLocationHtml=$bookingForm['meta']['location_fixed_dropoff_service_type_'.$data['service_type_id']][$dropoffLocationId]['address'];
+				$dropoffLocationHtml=$bookingForm['meta']['location_fixed_dropoff_service_type_'.$data['service_type_id']][$dropoffLocationId]['name'];
 			}
 			else
 			{
