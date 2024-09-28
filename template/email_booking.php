@@ -58,8 +58,11 @@ if ((int)$this->data['document_header_exclude'] !== 1) {
 					<!-- -->
 					<tr>
 						<td>
-							Please Note: For any help / clarification you will need about your transfer don't hesitate to contact us at (+30)6972713742 <br>
-							Contact person: George Baikas
+							<?php
+							$driverMeta = CHBSPostMeta::getPostMeta($this->data['booking']['meta']['driver_id']);
+							?>
+							Please Note: For any help / clarification you will need about your transfer don't hesitate to contact us at <?php echo  $driverMeta['contact_phone_number']; ?> <br>
+							Contact person: <?php echo $driverMeta['first_name']; ?> <?php echo $driverMeta['second_name']; ?>
 						</td>
 					</tr>
 					<tr>
