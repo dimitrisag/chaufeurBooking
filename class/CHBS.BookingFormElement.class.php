@@ -158,11 +158,11 @@ class CHBSBookingFormElement
 				/***/
 
 				$pickUpLocation = preg_split('/\./', $formElementFieldPost['pickup_location_hidden'][$index]);
-				if (is_array($geofencePickup)) {
-					if (in_array(-1, $geofencePickup)) $geofencePickup = array(-1);
+				if (is_array($pickUpLocation)) {
+					if (in_array(-1, $pickUpLocation)) $pickUpLocation = array(-1);
 				}
 
-				if (!is_array($geofencePickup)) $geofencePickup = array(-1);
+				if (!is_array($pickUpLocation)) $pickUpLocation = array(-1);
 
 				/***/
 
