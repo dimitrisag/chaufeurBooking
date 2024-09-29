@@ -14,4 +14,10 @@ class LocationChecker {
         if ($locationId == 107 || $locationId == 106 || $locationId == 345) return true;
         return false;
     }
+
+    public function isInPickupLocationList($selectedPickup, $acceptedLocations)
+    {
+        if (in_array($selectedPickup, $acceptedLocations)) return true;
+        return false;
+    }
 }
