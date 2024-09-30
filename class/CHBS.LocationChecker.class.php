@@ -9,9 +9,15 @@ class LocationChecker {
         // 106 => airport
     }
 
-    public function isRestricted($locationId) {
-        // Ids for locations to restrict (Ports and Airports)
-        if ($locationId == 107 || $locationId == 106 || $locationId == 345) return true;
+    // public function isRestricted($locationId) {
+    //     // Ids for locations to restrict (Ports and Airports)
+    //     if ($locationId == 107 || $locationId == 106 || $locationId == 345) return true;
+    //     return false;
+    // }
+
+    public function isInPickupLocationList($selectedPickup, $acceptedLocations)
+    {
+        if (in_array($selectedPickup, $acceptedLocations)) return true;
         return false;
     }
 }

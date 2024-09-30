@@ -297,7 +297,7 @@ class CHBSBookingFormElement
 				 * Check if location is in list
 				 */
 				$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-				if (!$LocationChecker->isRestricted($pickupLocationId)) continue;
+				if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
 
 				/************************************************************** */
 
@@ -547,7 +547,7 @@ class CHBSBookingFormElement
 			 * Check if location is in list
 			 */
 			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-			if (!$LocationChecker->isRestricted($pickupLocationId)) continue;
+			if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
 
 			/************************************************************** */
 
