@@ -2850,6 +2850,14 @@
 												</span>
 											</div>
 										</th>	
+										<th style="width:10%">
+											<div>
+												<?php esc_html_e('Dropoff location','chauffeur-booking-system'); ?>
+												<span class="to-legend">
+													<?php esc_html_e('Dropoff location.','chauffeur-booking-system'); ?>
+												</span>
+											</div>
+										</th>	
 										<th style="width:5%">
 											<div>
 												<?php esc_html_e('Remove','chauffeur-booking-system'); ?>
