@@ -2962,6 +2962,18 @@
 											</div>
 										</td>
 										<td>
+											<div class="to-clear-fix">											
+												<select name="<?php CHBSHelper::getFormName('form_element_field[dropoff_location][]'); ?>" id="form_element_field_dropoff_location" class="to-dropkick-disable chbs-dropoff-location" multiple="multiple" size="3">
+													<option value="-1" selected="selected"><?php esc_html_e('- None -','chauffeur-booking-system'); ?></option>
+<?php
+		foreach($this->data['dictionary']['location'] as $index=>$value)
+			echo '<option value="'.esc_attr($index).'">'.esc_html($value['post']->post_title).'</option>';
+?>
+												</select>
+												<input type="hidden" value="" name="<?php CHBSHelper::getFormName('form_element_field[dropoff_location_hidden][]'); ?>"/>
+											</div>
+										</td>
+										<td>
 											<div>
 												<a href="#" class="to-table-button-remove"><?php esc_html_e('Remove','chauffeur-booking-system'); ?></a>
 											</div>
@@ -3087,6 +3099,18 @@
 												<input type="hidden" value="" name="<?php CHBSHelper::getFormName('form_element_field[pickup_location_hidden][]'); ?>"/>
 											</div>
 										</td>	
+										<td>
+											<div class="to-clear-fix">											
+												<select name="<?php CHBSHelper::getFormName('form_element_field[dropoff_location][]'); ?>" id="<?php CHBSHelper::getFormName('form_element_field_dropoff_location_'.$fieldValue['id']); ?>"  class="to-dropkick-disable chbs-dropoff-location" multiple="multiple" size="3">
+													<option value="-1" <?php echo ((is_array($fieldValue['dropoff_location'])) && (in_array(-1,$fieldValue['dropoff_location'])) ? ' selected="selected"' : ''); ?>><?php esc_html_e('- None -','chauffeur-booking-system'); ?></option>
+<?php
+				foreach($this->data['dictionary']['location'] as $index=>$value)
+					echo '<option value="'.esc_attr($index).'" '.((is_array($fieldValue['dropoff_location'])) && (in_array($index,$fieldValue['dropoff_location'])) ? ' selected="selected"' : '').'>'.esc_html($value['post']->post_title).'</option>';
+?>
+												</select>
+												<input type="hidden" value="" name="<?php CHBSHelper::getFormName('form_element_field[dropoff_location_hidden][]'); ?>"/>
+											</div>
+										</td>
 										<td>
 											<div>
 												<a href="#" class="to-table-button-remove"><?php esc_html_e('Remove','chauffeur-booking-system'); ?></a>

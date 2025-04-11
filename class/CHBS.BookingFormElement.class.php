@@ -166,10 +166,21 @@ class CHBSBookingFormElement
 
 				/***/
 
+				/***/
+
+				$dropoffLocation = preg_split('/\./', $formElementFieldPost['dropoff_location_hidden'][$index]);
+				if (is_array($dropoffLocation)) {
+					if (in_array(-1, $dropoffLocation)) $dropoffLocation = array(-1);
+				}
+
+				if (!is_array($dropoffLocation)) $dropoffLocation = array(-1);
+
+				/***/
+
 				if ($Validation->isEmpty($value))
 					$value = CHBSHelper::createId();
 
-				$formElementField[] = array('id' => $value, 'label' => $formElementFieldPost['label'][$index], 'field_type' => $formElementFieldPost['field_type'][$index], 'mandatory' => $formElementFieldPost['mandatory'][$index], 'dictionary' => $formElementFieldPost['dictionary'][$index], 'field_layout' => $formElementFieldPost['field_layout'][$index], 'message_error' => $formElementFieldPost['message_error'][$index], 'panel_id' => $formElementFieldPost['panel_id'][$index], 'service_type_id_enable' => $serviceTypeIdEnable, 'geofence_pickup' => $geofencePickup, 'geofence_dropoff' => $geofenceDropoff, 'pickup_location' => $pickUpLocation);
+				$formElementField[] = array('id' => $value, 'label' => $formElementFieldPost['label'][$index], 'field_type' => $formElementFieldPost['field_type'][$index], 'mandatory' => $formElementFieldPost['mandatory'][$index], 'dictionary' => $formElementFieldPost['dictionary'][$index], 'field_layout' => $formElementFieldPost['field_layout'][$index], 'message_error' => $formElementFieldPost['message_error'][$index], 'panel_id' => $formElementFieldPost['panel_id'][$index], 'service_type_id_enable' => $serviceTypeIdEnable, 'geofence_pickup' => $geofencePickup, 'geofence_dropoff' => $geofenceDropoff, 'pickup_location' => $pickUpLocation, 'dropoff_location' => $dropoffLocation);
 			}
 		}
 
@@ -298,6 +309,14 @@ class CHBSBookingFormElement
 				 */
 				$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
 				if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
+
+				/************************************************************** */
+
+				/***************************************************************
+				 * Check if location is in list
+				 */
+				$dropoffLocationId = $data['fixed_location_dropoff_service_type_' . $data['service_type_id']];
+				if (!$LocationChecker->isInDropoffLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
 
 				/************************************************************** */
 
@@ -548,6 +567,14 @@ class CHBSBookingFormElement
 			 */
 			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
 			if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
+
+			/************************************************************** */
+
+			/***************************************************************
+			 * Check if location is in list
+			 */
+			$dropoffLocationId = $data['fixed_location_dropoff_service_type_' . $data['service_type_id']];
+			if (!$LocationChecker->isInDropoffLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
 
 			/************************************************************** */
 

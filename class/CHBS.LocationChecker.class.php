@@ -20,4 +20,10 @@ class LocationChecker {
         if (in_array($selectedPickup, $acceptedLocations)) return true;
         return false;
     }
+
+    public function isInDropoffLocationList($selectedDropoff, $acceptedLocations)
+    {
+        if (in_array($selectedDropoff, $acceptedLocations)) return true;
+        return false;
+    }
 }
