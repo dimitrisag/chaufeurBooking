@@ -3892,7 +3892,7 @@
 				
 				$('#post').on('submit',function()
 				{
-					$('select.chbs-service-type-id-enable,select.chbs-geofence-pickup,select.chbs-geofence-dropoff,select.chbs-pickup-location').each(function()
+					$('select.chbs-service-type-id-enable,select.chbs-geofence-pickup,select.chbs-geofence-dropoff,select.chbs-pickup-location, select.chbs-dropoff-location').each(function()
 					{
 						var option=[];
 						$(this).children('option:selected').each(function() { option.push($(this).val()); });
