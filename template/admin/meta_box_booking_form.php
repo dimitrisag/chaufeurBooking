@@ -2770,7 +2770,7 @@
 												</span>
 											</div>
 										</th>
-										<th style="width:10%">
+										<th style="width:5%">
 											<div>
 												<?php esc_html_e('Type','chauffeur-booking-system'); ?>
 												<span class="to-legend">
@@ -2802,7 +2802,7 @@
 												</span>
 											</div>
 										</th>	
-										<th style="width:10%">
+										<th style="width:5%">
 											<div>
 												<?php esc_html_e('Layout','chauffeur-booking-system'); ?>
 												<span class="to-legend">
