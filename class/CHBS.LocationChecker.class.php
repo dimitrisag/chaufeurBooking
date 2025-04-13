@@ -1,7 +1,9 @@
 <?php
 
-class LocationChecker {
-    public function locationInList($locationId, $acceptedId) {
+class LocationChecker
+{
+    public function locationInList($locationId, $acceptedId)
+    {
         $data = $this->data['meta']['form_element_field'];
         if ($locationId == $acceptedId) return true;
         return false;
