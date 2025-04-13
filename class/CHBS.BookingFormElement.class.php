@@ -308,15 +308,9 @@ class CHBSBookingFormElement
 				 * Check if location is in list
 				 */
 				$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-				if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
-
-				/************************************************************** */
-
-				/***************************************************************
-				 * Check if location is in list
-				 */
 				$dropoffLocationId = $data['fixed_location_dropoff_service_type_' . $data['service_type_id']];
-				if (!$LocationChecker->isInDropoffLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
+				if (!$LocationChecker->isInLocationList($pickupLocationId, $value['pickup_location']) 
+					&& !$LocationChecker->isInLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
 
 				/************************************************************** */
 
@@ -566,15 +560,9 @@ class CHBSBookingFormElement
 			 * Check if location is in list
 			 */
 			$pickupLocationId = $data['fixed_location_pickup_service_type_' . $data['service_type_id']];
-			if (!$LocationChecker->isInPickupLocationList($pickupLocationId, $value['pickup_location'])) continue;
-
-			/************************************************************** */
-
-			/***************************************************************
-			 * Check if location is in list
-			 */
 			$dropoffLocationId = $data['fixed_location_dropoff_service_type_' . $data['service_type_id']];
-			if (!$LocationChecker->isInDropoffLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
+			if (!$LocationChecker->isInLocationList($pickupLocationId, $value['pickup_location']) 
+				&& !$LocationChecker->isInLocationList($dropoffLocationId, $value['dropoff_location'])) continue;
 
 			/************************************************************** */
 
